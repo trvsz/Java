@@ -1,0 +1,18 @@
+What zip code are you interested in? 20500
+And what proximity (in miles)? 0.3
+
+20500: Washington, DC
+zip codes within 0.3 miles:
+    20045 Washington, DC, 0.26 miles
+    20500 Washington, DC, 0.00 miles
+    20501 Washington, DC, 0.27 miles
+    20502 Washington, DC, 0.27 miles
+
+lat 1 = 38.894781
+long1 = -77.036122
+
+ zip      lat2         long2
+20045   38.896599   -77.0319
+20500   38.894781   -77.036122
+20501   38.89872    -77.036198
+20502   38.89872    -77.036198
