@@ -1,0 +1,6 @@
+Point p1 = new Point();
+...
+System.out.println(p1);
+The above println statement (the entire line) is equivalent to what?
+
+>> System.out.println(p1.toString());

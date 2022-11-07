@@ -1,0 +1,5 @@
+Which of the following choices is the correct syntax for quickly declaring/initializing
+an array of integers to store a particular list of values?
+We didn't get to this in lecture -- check the slides or chapter 7 in the book.
+
+int[] a = {17, -3, 42, 5, 9, 28};

@@ -1,0 +1,9 @@
+Suppose a method in the BankAccount class is defined as:
+
+public double computeInterest(int rate)
+
+If the client code has declared a BankAccount variable 
+named acct, which of the following would be a valid call 
+to the above method?
+
+>> double result = acct.computeInterest(42)

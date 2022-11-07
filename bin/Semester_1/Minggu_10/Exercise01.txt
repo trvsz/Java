@@ -1,0 +1,4 @@
+Which of the following choices is the correct syntax for
+declaring/initializing an array of integers?
+
+int[] a = new int[10];
