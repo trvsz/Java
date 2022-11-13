@@ -108,8 +108,11 @@ class Stock {
  *  totalShares 75
  *  totalCost 2716.0
  * 
- *  symbol
- *  totalShares
- *  total Cost
- *  marketValue
+ *  symbol "AMZN"
+ *  totalShares 75
+ *  total Cost 2716.0
+ *  marketValue 2796.75
+ * 
+ *  totalShares 15 | 25 | 45
+ *  totalCost 248.25 | 429.15 | 
  */
