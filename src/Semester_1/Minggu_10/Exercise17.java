@@ -4,20 +4,25 @@ package Semester_1.Minggu_10;
  */
 
 public class Exercise17 {
-    public static int longestSortedSequence(int[] array) {
-        if (array.length == 0) {
+    public int longestSortedSequence(int[] a) {
+        if(a.length == 0)
             return 0;
-        }
-        int count = 0;
-        int result = 0;
-        for (int i = 0; i < array.length - 1; i++) {
-            count++;
-            if (array[i + 1] < array[i]) {
-                result = Math.max(result, count);
+    
+        int maxLen = 1;
+        int len = 1;
+        
+        for(int i = 1; i < a.length; i++) {
+            if(a[i-1] <= a[i]) {
+                len++;
+            } else {
+                if(len > maxLen) {
+                    maxLen = len;
+                }
+                
+                len = 1;
             }
         }
-        count++;
-        result = Math.max(result, count);
-        return result;
+        
+        return Math.max(maxLen, len);
     }
 }
