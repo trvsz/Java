@@ -7,7 +7,6 @@ public class Exercise17 {
     public int longestSortedSequence(int[] a) {
         if(a.length == 0)
             return 0;
-    
         int maxLen = 1;
         int len = 1;
         
@@ -22,7 +21,6 @@ public class Exercise17 {
                 len = 1;
             }
         }
-        
         return Math.max(maxLen, len);
     }
 }
