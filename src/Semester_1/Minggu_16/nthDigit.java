@@ -20,5 +20,4 @@ public class nthDigit {
         String str = Integer.toString(target);
         return str.charAt((n - 1) % i) - '0';
     }
-    
 }
