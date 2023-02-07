@@ -1,4 +1,4 @@
-package Semester_2.Minggu_01;
+package Semester_2.Pemrograman.Minggu_01;
 
 /*
  * Travis Zusa Zuve Saputra
