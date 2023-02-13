@@ -27,7 +27,7 @@ public class prak01_22537141013 {
             System.out.print(">> Pilih Menu: ");
             int menu = ui.nextInt();
 
-            switch (menu) { // Input menu dari user input digunakan untuk memilih case yang sesuai (telah diberi value sama dengan menu)
+            switch (menu) { // Input menu dari user input digunakan untuk memilih case yang sesuai (case telah diberi value sama dengan menu)
                 
                 // Menu untuk menginput data
                 case 1:   
@@ -95,7 +95,7 @@ public class prak01_22537141013 {
                         System.out.print("Metode yang ingin digunakan: ");
                         int metode = ui.nextInt(); // Input muser untuk memilih program atau cara menghapus nilai dalam array
                         
-                        switch (metode) {
+                        switch (metode) { // Input metode dari user input digunakan untuk memilih case yang sesuai (case telah diberi value sama dengan metode)
                             
                             // Menu penghapusan dengan menghapus berdasar indeks atau alamat letak nilai tersebut berada di array
                             case 1:
@@ -116,7 +116,7 @@ public class prak01_22537141013 {
                                 }
                                 break;
                             
-                            
+                            // Menu penghapusan dengan menghapus berdasar nilai atau data yang berada di array (sekaligus)
                             case 2:
                                 for (int i = 0; i < jumlahData; i++) { // Perulangan se-jumlahData dimulai dari i = 0
                                     if (arr[i] == hapus) { // Cek indeks ke-i sama dengan input user
