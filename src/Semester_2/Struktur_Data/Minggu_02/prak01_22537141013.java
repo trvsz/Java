@@ -46,7 +46,7 @@ public class prak01_22537141013 {
                 // Menu untuk mengurutkan data
                 case 2:
                     int temp; // Deklarasi untuk penyimpanan sementara
-                    
+                    // Bubble Sort
                     for (int i = 0; i < jumlahData; i++) { // Loop sampai se-jumlahData
                         for (int j = i + 1; j < jumlahData; j++) { // Loop jika arr[i] > arr[j] maka akan ditukar menggunakan variabel temp
                             if (arr[i] > arr[j]) { 
