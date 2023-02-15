@@ -89,7 +89,7 @@ public class prak01_22537141013 {
                     if (found) { // Jika boolean found true, program ini akan dijalankan
                         System.out.println();
                         System.out.println("+-----METODE PENGHAPUSAN-----+");
-                        System.out.println("[ 1 ] - Index");
+                        System.out.println("[ 1 ] - Index (BUG Output)"); // Menu ini masih terdapat bug 
                         System.out.println("[ 2 ] - Nilai Data");
                         System.out.println("+----------------------------+");
                         System.out.print("Metode yang ingin digunakan: ");
@@ -99,13 +99,23 @@ public class prak01_22537141013 {
                             
                             // Menu penghapusan dengan menghapus berdasar indeks atau alamat letak nilai tersebut berada di array
                             case 1:
+                                boolean[] sudahDicetak = new boolean[jumlahData];
+                            
                                 for (int i = 1; i <= jumlahDitemukan; i++) { // Perulangan dengan awalan menghasilkan output hingga menyamai elemen jumlahDitemukan
-                                    System.out.println("[+] Data telah ditemukan di indeks ke-" + index[i]); // Pencetakan letak alamat nilai pada array alamat (index[])
+                                    int idx = index[i];
+                                    if (!sudahDicetak[idx]) {
+                                        System.out.println("[+] Data telah ditemukan di indeks ke-" + idx); // Pencetakan letak alamat nilai pada array alamat (index[])
+                                        sudahDicetak[idx] = true;
+                                    }
                                 }
 
                                 System.out.print("Indeks ke- yang ingin dihapus? ");
                                 int hapus_index = ui.nextInt(); // Input user untuk memilih indeks ke- berapa yang akan dihapus
-                                if (hapus_index >= 0 && hapus_index < jumlahData) { // Cek apakah input user adlaah lebih dari 0 dan kurang dari elemen jumlahData
+                                if (hapus_index >= 0 && hapus_index < jumlahDitemukan) { // Cek apakah input user adlaah lebih dari 0 dan kurang dari elemen jumlahData
+                                    if (!sudahDicetak[hapus_index]) {
+                                        System.out.println("Data akan dihapus pada indeks ke-" + hapus_index);
+                                        sudahDicetak[hapus_index] = true;
+                                    }
                                     for (int i = hapus_index; i < jumlahData - 1; i++) { // Perulangan untuk menggeser elemen array ke posisi sebelumnya
                                         arr[i] = arr[i + 1]; // Elemen akan menempati posisi elemen atau nilai yang dihapus
                                     }
