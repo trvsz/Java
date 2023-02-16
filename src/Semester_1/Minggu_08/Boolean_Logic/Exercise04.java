@@ -21,12 +21,12 @@ public class Exercise04 {
 
         if (i < k) {
             if (j < l) {
-                System.out.println(true);
+                System.out.println("Tanggal dan bulan pertama datang sebelum tanggal dan bulan kedua.");
             } else if (j > l) {
-                System.out.println(false);
+                System.out.println("Tanggal dan bulan pertama tidak datang sebelum tanggal dan bulan kedua.");
             }
         } else if (i > k || i == k){
-            System.out.println(false);
+            System.out.println("Tanggal dan bulan pertama tidak datang sebelum tanggal dan bulan kedua.");
         }
     }
 }
