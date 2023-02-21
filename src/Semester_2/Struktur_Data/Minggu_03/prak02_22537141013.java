@@ -29,7 +29,7 @@ public class prak02_22537141013 {
                 case 1:
                     System.out.print("Masukkan Jumlah Data Mahasiswa: ");
                     int jumlahInput = ui.nextInt();
-                    for (int j = 0; j < jumlahInput; j++) {
+                    for (int j = 0; j < jumlahInput; j++) { // Looping untuk input data
                         System.out.println("Data ke-" + (i));
                         System.out.print("Masukkan NIM: ");
                         nim = ui.next();
@@ -37,7 +37,7 @@ public class prak02_22537141013 {
                         nama = ui.next();
                         System.out.print("Masukkan IPK: ");
                         ipk = ui.nextDouble();
-                        data.tambahData(nama, nim, ipk);
+                        data.tambahData(nama, nim, ipk); // Memanggil method tambahData
                         i++;
                     }
                     break;
@@ -47,55 +47,55 @@ public class prak02_22537141013 {
                     System.out.println("[ 2 ] Nama (Metode Insertion Sort)");
                     System.out.println("[ 3 ] IPK (Metode Bubble Sort)");
                     System.out.print("Pilih Menu: ");
-                    int pilihUrut = ui.nextInt();
+                    int pilihUrut = ui.nextInt(); // Pilihan untuk metode sorting
                     
-                    switch (pilihUrut) {
+                    switch (pilihUrut) { // Switch untuk memanggil method sorting
                         case 1:
-                            data.selectionSort();
+                            data.selectionSort(); // Memanggil method selectionSort
                             System.out.println("Data Berhasil Diurutkan");
                             break;
                         case 2:
-                            data.insertionSort();
+                            data.insertionSort(); // Memanggil method insertionSort
                             System.out.println("Data Berhasil Diurutkan");
                             break;
                         case 3:
-                            data.bubbleSort();
+                            data.bubbleSort(); // Memanggil method bubbleSort
                             System.out.println("Data Berhasil Diurutkan");
                             break;
-                        default:
+                        default: // Jika pilihan tidak tersedia
                             System.out.println("Pilihan Tidak Tersedia");
                             break;
                     }
                     break;
                 case 3:
-                    data.tampilkanData();
+                    data.tampilkanData(); // Memanggil method tampilkanData (Cetak Data)
                     break;
                 case 4:
                     System.out.println("Cari Berdasarkan: ");
                     System.out.println("[ 1 ] NIM");
                     System.out.println("[ 2 ] Nama");
                     System.out.print("Pilih Menu: ");
-                    int pilihCari = ui.nextInt();
+                    int pilihCari = ui.nextInt(); // Pilihan untuk metode pencarian
 
-                    switch (pilihCari) {
+                    switch (pilihCari) { // Switch untuk memanggil method pencarian
                         case 1:
                             System.out.print("Masukkan NIM: ");
-                            cariData = ui.next();
-                            boolean hasil = data.cariNim(cariData);
-                            if (hasil == true) {
+                            cariData = ui.next(); // Input data yang akan dicari
+                            boolean hasil = data.cariNim(cariData); // Memanggil method cariNim
+                            if (hasil == true) { // Jika data ditemukan
                                 System.out.println("Data Ditemukan");
                                 System.out.println("Nama: " + data.nama());
                                 System.out.println("NIM: " + data.nim());
                                 System.out.println("IPK: " + data.ipk());
                             } else {
-                                System.out.println("Data Tidak Ditemukan");
+                                System.out.println("Data Tidak Ditemukan"); // Jika data tidak ditemukan
                             }
                             break;
                         case 2:
                             System.out.print("Masukkan Nama: ");
-                            cariData = ui.next();
-                            hasil = data.cariNama(cariData);
-                            if (hasil) {
+                            cariData = ui.next(); // Input data yang akan dicari
+                            hasil = data.cariNama(cariData); // Memanggil method cariNama
+                            if (hasil) { // Jika data ditemukan
                                 System.out.println("Data Ditemukan");
                                 System.out.println("Nama: " + data.nama());
                                 System.out.println("NIM: " + data.nim());
@@ -105,144 +105,148 @@ public class prak02_22537141013 {
                             }
                             break;
                         default:
-                            System.out.println("Pilihan Tidak Tersedia");
+                            System.out.println("Pilihan Tidak Tersedia"); // Jika pilihan tidak tersedia
                             break;
                     }
                     break;
                 case 5:
                     System.out.println("NIM yang akan dihapus: ");
-                    cariData = ui.next();
-                    boolean hasil = data.hapusData(cariData);
-                    if (hasil) {
+                    cariData = ui.next(); // Input data yang akan dihapus
+                    boolean hasil = data.hapusData(cariData); // Memanggil method hapusData
+                    if (hasil) { // Jika data ditemukan
                         System.out.println("Data Berhasil Dihapus");
                     } else {
                         System.out.println("Data Tidak Ditemukan");
                     }
                     break;
                 case 6:
-                    loop = false;
+                    loop = false; // Looping berhenti
                     break;
                 default:
-                    break;
+                    break; // Jika pilihan tidak tersedia
             }
         }
     }
 }
 
 class mhsw {
+    // Deklarasi variabel
     private String namaMhs;
     private String nimMhs;
     private double ipkMhs;
 
     public mhsw(String nama, String nim, double ipk) {
+        // Inisialisasi variabel
         namaMhs = nama;
         nimMhs = nim;
         ipkMhs = ipk;
     }
-    public void lihatData() {
+    public void lihatData() { // Method untuk menampilkan data
         System.out.println(nimMhs + " + " + namaMhs + " + " + ipkMhs);
     }
     public String getNim() {
-        return nimMhs;
+        return nimMhs; // Mengembalikan nilai nimMhs
     }
     public String getNama() {
-        return namaMhs;
+        return namaMhs; // Mengembalikan nilai namaMhs
     }
     public double getIpk() {
-        return ipkMhs;
+        return ipkMhs; // Mengembalikan nilai ipkMhs
     }
 }
 
 class array {
+    // Deklarasi variabel
     private mhsw[] data;
     private int jumlahData;
     private int i;
 
     public array(int max) {
-        data = new mhsw[max];
-        jumlahData = 0;
+        data = new mhsw[max]; // Inisialisasi array
+        jumlahData = 0; // Inisialisasi jumlah data
     }
     public boolean cekNim(String nim) {
-        boolean n = cariNim(nim);
-        if (n == true) {
-            return true;
+        boolean n = cariNim(nim); // Memanggil method cariNim sebagai acuan untuk mengecek data
+        if (n == true) { // Jika data ditemukan
+            return true; // Mengembalikan nilai true
         } else {
-            return false;
+            return false; // Mengembalikan nilai false
         }
     }
-    public boolean cariNim(String crnim) {
-        for (i = 0; i < jumlahData; i++) {
-            if (data[i].getNim().equals(crnim)) {
-                break;
+    public boolean cariNim(String crnim) { // Method untuk mencari data berdasarkan nim
+        for (i = 0; i < jumlahData; i++) { // Looping untuk mencari data
+            if (data[i].getNim().equals(crnim)) { // Jika data ditemukan dan sama dengan data yang dicari
+                break; // Looping berhenti
             }
         }
-        if (i == jumlahData) {
-            return false;
-        } else {
-            return true;
+        if (i == jumlahData) { // Jika data tidak ditemukan
+            return false; // Mengembalikan nilai false
+        } else { // Jika data ditemukan
+            return true; // Mengembalikan nilai true
         }
     }
-    public boolean cariNama(String crnama) {
-        for (i = 0; i < jumlahData; i++) {
-            if (data[i].getNama().equals(crnama)) {
-                break;
+    public boolean cariNama(String crnama) { // Method untuk mencari data berdasarkan nama
+        for (i = 0; i < jumlahData; i++) { // Looping untuk mencari data
+            if (data[i].getNama().equals(crnama)) { // Jika data ditemukan dan sama dengan data yang dicari
+                break; // Looping berhenti
             }
         }
-        if (i == jumlahData) {
-            return false;
-        } else {
-            return true;
+        if (i == jumlahData) { // Jika data tidak ditemukan
+            return false; // Mengembalikan nilai false
+        } else { // Jika data ditemukan
+            return true; // Mengembalikan nilai true
         }
     }
-    public void tambahData(String nama, String nim, double ipk) {
-        boolean cek = cekNim(nim);
-        if (cek) {
-            System.out.println("NIM sudah ada");
-        } else {
-            data[jumlahData] = new mhsw(nama, nim, ipk);
-            jumlahData++;
+    public void tambahData(String nama, String nim, double ipk) { // Method untuk menambah data
+        boolean cek = cekNim(nim); // Memanggil method cekNim
+        if (cek) { // Jika data sudah ada
+            System.out.println("NIM sudah ada"); // Menampilkan pesan
+        } else { // Jika data belum ada
+            data[jumlahData] = new mhsw(nama, nim, ipk); // Menambah data
+            jumlahData++; // Menambah jumlah data
         }
     }
     public void tampilkanData() {
         System.out.println("+----Data Mahasiswa----+");
         System.out.println("Nama\tNIM\tIPK");
-        for (i = 0; i < jumlahData; i++) {
-            data[i].lihatData();
+        for (i = 0; i < jumlahData; i++) { // Looping untuk menampilkan data
+            data[i].lihatData(); // Memanggil method lihatData
         }
         System.out.println("+----------------------+");
     }
-    public String nim() {
-        return data[i].getNim();
+    public String nim() { // Method untuk mengembalikan nilai nim
+        return data[i].getNim(); // Mengembalikan nilai nim
     }
-    public String nama() {
-        return data[i].getNama();
+    public String nama() { // Method untuk mengembalikan nilai nama
+        return data[i].getNama(); // Mengembalikan nilai nama
     }
-    public double ipk() {
-        return data[i].getIpk();
+    public double ipk() { // Method untuk mengembalikan nilai ipk
+        return data[i].getIpk(); // Mengembalikan nilai ipk
     }
-    public boolean hapusData(String hps) {
-        boolean cr = cariNim(hps);
-        if (cr) {
-            for (int j = i; j < jumlahData - 1; j++) {
-                data[j] = data[j + 1];
+    public boolean hapusData(String hps) { // Method untuk menghapus data
+        boolean cr = cariNim(hps); // Memanggil method cariNim sebagai acuan untuk menghapus data
+        if (cr) { // Jika data ditemukan
+            for (int j = i; j < jumlahData - 1; j++) { // Looping untuk menghapus data
+                data[j] = data[j + 1]; // Menggeser data
             }
-            jumlahData--;
-            return true;
-        } else {
-            return false;
+            jumlahData--; // Mengurangi jumlah data
+            return true; // Mengembalikan nilai true
+        } else { // Jika data tidak ditemukan
+            return false; // Mengembalikan nilai false
         }
     }
-    public void selectionSort() {
-        int posisi;
-        mhsw temp;
-        for (i = 0; i < jumlahData - 1; i++) {
-            posisi = i;
-            for (int j = i + 1; j < jumlahData; j++) {
-                if (data[j].getNim().compareTo(data[posisi].getNim()) < 0) {
-                    posisi = j;
+    public void selectionSort() { // Method untuk mengurutkan data berdasarkan nim
+        int posisi; // Deklarasi variabel
+        mhsw temp; // Deklarasi variabel
+        for (i = 0; i < jumlahData - 1; i++) { // Looping untuk mengurutkan data
+            posisi = i; // Inisialisasi variabel
+            for (int j = i + 1; j < jumlahData; j++) { // Looping untuk mencari data terkecil
+                if (data[j].getNim().compareTo(data[posisi].getNim()) < 0) { // Jika data lebih kecil dari data terkecil
+                    posisi = j; // Inisialisasi variabel
                 }
             }
-            if (posisi != i) {
+            if (posisi != i) { // Jika data terkecil tidak sama dengan data awal
+                // Menukar data
                 temp = data[i];
                 data[i] = data[posisi];
                 data[posisi] = temp;
@@ -250,24 +254,26 @@ class array {
         }
         System.out.println("Data Mahasiswa telah diurutkan berdasarkan NIM");
     }
-    public void insertionSort() {
-        mhsw temp;
-        for (i = 1; i < jumlahData; i++) {
+    public void insertionSort() { // Method untuk mengurutkan data berdasarkan nama
+        mhsw temp; // Deklarasi variabel
+        for (i = 1; i < jumlahData; i++) { // Looping untuk mengurutkan data
+            // Memindahkan data
             temp = data[i];
             int j = i;
-            while ((j > 0) && (data[j - 1].getNama().compareTo(temp.getNama()) > 0)) {
-                data[j] = data[j - 1];
-                j--;
+            while ((j > 0) && (data[j - 1].getNama().compareTo(temp.getNama()) > 0)) { // Looping untuk mencari posisi data
+                data[j] = data[j - 1]; // Memindahkan data
+                j--; // Mengurangi nilai j
             }
-            data[j] = temp;
+            data[j] = temp; // Memindahkan data
         }
         System.out.println("Data Mahasiswa telah diurutkan berdasarkan Nama");
     }
-    public void bubbleSort() {
-        mhsw temp;
-        for (i = 0; i < jumlahData - 1; i++) {
-            for (int j = 0; j < jumlahData - 1; j++) {
-                if (data[j].getIpk() > data[j + 1].getIpk()) {
+    public void bubbleSort() { // Method untuk mengurutkan data berdasarkan ipk
+        mhsw temp; // Deklarasi variabel
+        for (i = 0; i < jumlahData - 1; i++) { // Looping untuk mengurutkan data
+            for (int j = 0; j < jumlahData - 1; j++) { // Looping untuk membandingkan data
+                if (data[j].getIpk() > data[j + 1].getIpk()) { // Jika data lebih besar dari data berikutnya
+                    // Menukar data
                     temp = data[j];
                     data[j] = data[j + 1];
                     data[j + 1] = temp;
