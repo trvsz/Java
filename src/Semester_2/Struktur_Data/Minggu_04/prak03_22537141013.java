@@ -78,7 +78,7 @@ public class prak03_22537141013 {
         System.out.print("Name: ");
         String name = ui.nextLine(); // Mengambil inputan
         for (patient patient : queue) { // Looping untuk mencari data queue
-            if (patient.getName().equals(name)) { // Jika data ditemukan
+            if (patient.getName().equals(name)) { // Jika  data ditemukan
                 System.out.println(">> Name: " + patient.getName()); // Menampilkan data
                 System.out.println(">> Complaint: " + patient.getComplaint()); // Menampilkan data
                 System.out.println(">> Address: " + patient.getAddress()); // Menampilkan data
