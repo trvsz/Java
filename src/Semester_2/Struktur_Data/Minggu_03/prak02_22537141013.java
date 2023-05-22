@@ -1,3 +1,5 @@
+package Semester_2.Struktur_Data.Minggu_03;
+
 // Travis Zusa Zuve Saputra
 // 22537141013
 

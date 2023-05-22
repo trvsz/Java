@@ -1,3 +1,5 @@
+package Semester_2.Struktur_Data.Minggu_09;
+
 import java.util.Scanner;
 
 // Travis Zusa Zuve Saputra
