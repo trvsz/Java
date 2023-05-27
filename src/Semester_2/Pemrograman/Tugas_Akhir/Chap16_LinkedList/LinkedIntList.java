@@ -1,5 +1,7 @@
 package Semester_2.Pemrograman.Tugas_Akhir.Chap16_LinkedList;
 
+import java.util.NoSuchElementException;
+
 /*
  * Travis Zusa Zuve Saputra
  * 22537141013
@@ -9,6 +11,113 @@ package Semester_2.Pemrograman.Tugas_Akhir.Chap16_LinkedList;
 
 public class LinkedIntList {
     private ListNode front;  // first value in the list (null if empty)
+
+    // Exercise 4
+    public int min() {
+        if (front == null) {
+            throw new NoSuchElementException();
+        }
+        int min = front.data;
+        ListNode current = front.next;
+        while (current != null) {
+            if (current.data < min) {
+                min = current.data;
+            }
+            current = current.next;
+        }
+        return min;
+    }
+
+    // Exercise 5
+    public Boolean hasTwoConsecutive() {
+        if (front == null) {
+            return false;
+        }
+        ListNode current = front;
+        while (current.next != null) {
+            if (current.data + 1 == current.next.data) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+
+    // Exercise 6
+    public int deleteBack() {
+        if (front == null) {
+            throw new NoSuchElementException();
+        }
+        int result;
+        if (front.next == null) {
+            result = front.data;
+            front = null;
+        } else {
+            ListNode current = front;
+            while (current.next.next != null) {
+                current = current.next;
+            }
+            result = current.next.data;
+            current.next = null;
+        }
+        return result;
+    }
+
+    // Exercise 7
+    public int removeAll(int value) {
+        int count = 0;
+        while (front != null && front.data == value) {
+            front = front.next;
+            count++;
+        }
+        if (front == null) {
+            return count;
+        }
+        ListNode current = front;
+        while (current.next != null) {
+            if (current.next.data == value) {
+                current.next = current.next.next;
+                count++;
+            } else {
+                current = current.next;
+            }
+        }
+        return count;
+    }
+
+    // Exercise 8
+    public void doubleList() {
+        if (front != null) {
+            ListNode end = front;
+            int size = 1;
+            while (end.next != null) {
+                end = end.next;
+                size++;
+            }
+            ListNode current = front;
+            while (size > 0) {
+                end.next = new ListNode(current.data);
+                current = current.next;
+                end = end.next;
+                size--;
+            }
+        }
+    }
+
+    // Exercise 9
+    public void reverse() {
+        if (front != null) {
+            ListNode current = front;
+            ListNode previous = null;
+            while (current != null) {
+                ListNode next = current.next;
+                current.next = previous;
+                previous = current;
+                current = next;
+            }
+            front = previous;
+        }
+    }
 
     // post: constructs an empty list
     public LinkedIntList() {
