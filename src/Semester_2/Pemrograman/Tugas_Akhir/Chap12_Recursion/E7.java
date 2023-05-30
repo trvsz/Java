@@ -20,11 +20,11 @@ public class E7 {
         System.out.println("After stutter: " + STACK);
     }
     public static void stutter(Stack<Integer> STACK) {
-        if (!STACK.isEmpty()) {
-            int VALUE = STACK.pop();
-            stutter(STACK);
-            STACK.push(VALUE);
-            STACK.push(VALUE);
+        if (!STACK.isEmpty()) { // Jika STACK tidak kosong
+            int VALUE = STACK.pop(); // Mengambil nilai dari STACK
+            stutter(STACK); // Panggil method dengan nilai STACK
+            STACK.push(VALUE); // Memasukkan nilai VALUE ke STACK
+            STACK.push(VALUE); // Memasukkan nilai VALUE ke STACK
         }
     }
 }

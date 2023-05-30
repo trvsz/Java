@@ -24,16 +24,16 @@ public class E6 {
         writeSequence(8);
     }
     public static void writeSequence (int n) {
-        if (n < 1) {
-            throw new IllegalArgumentException();
-        } else if (n == 1) {
-            System.out.print("1 ");
-        } else if (n == 2) {
-            System.out.print("1 1 ");
-        } else {
-            System.out.print((n + 1) / 2 + " ");
-            writeSequence(n - 2);
-            System.out.print((n + 1) / 2 + " ");
+        if (n < 1) { // Jika n kurang dari 1
+            throw new IllegalArgumentException(); // Membuat exception
+        } else if (n == 1) { // Jika n sama dengan 1
+            System.out.print("1 "); // Print 1
+        } else if (n == 2) { // Jika n sama dengan 2
+            System.out.print("1 1 "); // Print 1 1
+        } else { // Jika n lebih dari 2
+            System.out.print((n + 1) / 2 + " "); // Print (n + 1) / 2
+            writeSequence(n - 2); // Panggil method dengan nilai n dikurangi 2
+            System.out.print((n + 1) / 2 + " "); // Print (n + 1) / 2
         }
     }
 }

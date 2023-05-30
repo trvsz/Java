@@ -18,12 +18,12 @@ public class E3 {
         mystery6(3, 4);
     }
     public static void mystery6 (int x, int y) {
-        if (y == 1) {
-            System.out.print(x);
+        if (y == 1) { // jika y = 1
+            System.out.print(x); // print x
         } else {
-            System.out.print(x * y + ", ");
-            mystery6(x, y - 1);
-            System.out.print(", " + x * y);
+            System.out.print(x * y + ", "); // print x * y
+            mystery6(x, y - 1); // panggil method dengan nilai y dikurangi 1
+            System.out.print(", " + x * y); // print x * y
         }
     }
 }

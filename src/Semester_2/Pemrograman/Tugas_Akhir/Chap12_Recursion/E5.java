@@ -20,11 +20,11 @@ public class E5 {
     }
     public static String substring (String WORD, int START, int END) {
         if (START < 0 || END < 0 || START > END || END > WORD.length()) { // length() hanya untuk syarat agar tidak error
-            throw new IllegalArgumentException();
-        } else if (START == END) {
-            return "";
-        } else {
-            return WORD.substring(START, END);
+            throw new IllegalArgumentException(); // Membuat exception
+        } else if (START == END) { // Jika START sama dengan END
+            return ""; // Mengembalikan nilai kosong
+        } else { // Jika START tidak sama dengan END
+            return WORD.substring(START, END); // Mengembalikan nilai substring dari WORD dengan nilai START dan END
         }
     }
 }

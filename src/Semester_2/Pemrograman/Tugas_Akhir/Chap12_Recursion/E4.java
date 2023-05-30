@@ -24,17 +24,17 @@ public class E4 {
         writeChars(8);
     }
     public static void writeChars (int n) {
-        if (n < 1) {
-            throw new IllegalArgumentException("n harus lebih besar dari 1");
+        if (n < 1) { // Jika n kurang dari 1
+            throw new IllegalArgumentException("n harus lebih besar dari 1"); // Membuat exception
         }
-        if (n == 1) {
-            System.out.print("*");
-        } else if (n == 2) {
-            System.out.print("**");
-        } else {
-            System.out.print("<");
-            writeChars(n - 2);
-            System.out.print(">");
+        if (n == 1) { // Jika n sama dengan 1
+            System.out.print("*"); // Print *
+        } else if (n == 2) { // Jika n sama dengan 2
+            System.out.print("**"); // Print **
+        } else { // Jika n lebih dari 2
+            System.out.print("<"); // Print <
+            writeChars(n - 2); // Panggil method dengan nilai n dikurangi 2
+            System.out.print(">"); // Print >
         }
     }
 }

@@ -15,12 +15,12 @@ public class E8 {
         System.out.println("Returns: " + evenDigits(N));
     }
     public static Integer evenDigits (Integer n) {
-        if (n == 0) {
-        return 0;
-        } else if (n % 2 != 0) {
-            return evenDigits(n / 10);
-        } else {
-            return evenDigits(n / 10) * 10 + (n % 10);
+        if (n == 0) { // Jika n sama dengan 0
+        return 0; // Mengembalikan nilai 0
+        } else if (n % 2 != 0) { // Jika n modulus 2 tidak sama dengan 0
+            return evenDigits(n / 10); // Panggil method dengan nilai n dibagi 10
+        } else { // Jika n modulus 2 sama dengan 0
+            return evenDigits(n / 10) * 10 + (n % 10); // Panggil method dengan nilai n dibagi 10 dikali 10 ditambah n modulus 10
         }
     }
 }

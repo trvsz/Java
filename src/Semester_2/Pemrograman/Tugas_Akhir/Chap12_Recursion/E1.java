@@ -17,12 +17,12 @@ public class E1 {
         System.out.println();
         mystery2(100);
     }
-    public static void mystery2 (int n) {
-        if (n <= 1) {
-            System.out.print(n);
-        } else {
-            mystery2(n / 2);
-            System.out.print(", " + n);
+    public static void mystery2 (int n) { // Method untuk mencetak nilai
+        if (n <= 1) { // Jika n kurang dari sama dengan 1
+            System.out.print(n); // Mencetak nilai n
+        } else { // Jika n lebih dari 1
+            mystery2(n / 2); // Memanggil method dengan nilai n dibagi 2
+            System.out.print(", " + n); // Mencetak nilai n
         }
     }
 }
