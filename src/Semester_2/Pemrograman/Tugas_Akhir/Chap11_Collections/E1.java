@@ -24,9 +24,9 @@ public class E1 {
         System.out.println(nums);
     }
     public static void stutter (List<Integer> nums) {
-        for (int i = 0; i < nums.size(); i++) {
-            nums.add(i, nums.get(i));
-            i++;
+        for (int i = 0; i < nums.size(); i++) { // Pengulangan untuk menggeser nilai dalam list
+            nums.add(i, nums.get(i)); // Menambahkan nilai element ke dalam list
+            i++; // Menggeser nilai i
         }
     }
 }
