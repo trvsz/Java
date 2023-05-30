@@ -18,28 +18,28 @@ public class ArrayIntList {
 
     // Exercise 1
     public void mystery() {
-        int n = 0;
-        for (int i = 0; i < size; i++) {
-            n += elementData[i] * i;
+        int n = 0; // inisialisasi n
+        for (int i = 0; i < size; i++) { // iterasi sebanyak panjang list
+            n += elementData[i] * i; // n ditambah dengan nilai list ke-i dikali i
         }
-        elementData[size] = n;
-        size++;
+        elementData[size] = n; // nilai list ke-panjang list menjadi n
+        size++; // panjang list ditambah 1
     }
     /*
      * Output:
-     * List = [14, 3, 6, 2, 21]
-     * Size = 5
+     * list = [14, 3, 6, 2, 21]
+     * size = 5
      */
 
     // Exercise 2
-    public Boolean isPairwiseSorted () {
-        int runs = size / 2;
-        for (int i = 0; i < runs; i++) {
-            if (elementData[i * 2] > elementData[i * 2 + 1]) {
-                return false;
+    public Boolean isPairwiseSorted () { // returns true if the list is pairwise sorted
+        int runs = size / 2; // inisialisasi jumlah iterasi
+        for (int i = 0; i < runs; i++) { // iterasi sebanyak jumlah iterasi
+            if (elementData[i * 2] > elementData[i * 2 + 1]) { // jika nilai list ke-i dikali 2 lebih besar dari nilai list ke-i dikali 2 ditambah 1
+                return false; // mengembalikan false
             }
         }
-        return true;
+        return true; // mengembalikan true
     }
     /*
      * Output:
@@ -50,14 +50,14 @@ public class ArrayIntList {
      */
 
     // Exercise 3
-    public ArrayIntList runningTotal () {
-        ArrayIntList result = new ArrayIntList();
-        int total = 0;
-        for (int i = 0; i < size; i++) {
-            total += elementData[i];
-            result.add(total);
+    public ArrayIntList runningTotal () { // returns a new ArrayIntList that contains a running total of the original list
+        ArrayIntList result = new ArrayIntList(); // inisialisasi list baru
+        int total = 0; // inisialisasi total
+        for (int i = 0; i < size; i++) { // iterasi sebanyak panjang list 
+            total += elementData[i]; // total ditambah dengan nilai list ke-i
+            result.add(total); // menambahkan nilai total ke list baru
         }
-        return result;
+        return result; // mengembalikan list baru
     }
     /*
      * Output:
@@ -69,11 +69,11 @@ public class ArrayIntList {
      */
 
     // Exercise 4
-    public void removeFront (int num) {
-        for (int i = 0; i < num; i++) {
-            elementData[i] = elementData[i + num];
+    public void removeFront (int num) { // removes the given number of values from the front of the list
+        for (int i = 0; i < num; i++) { // iterasi sebanyak num
+            elementData[i] = elementData[i + num]; // nilai list ke-i menjadi nilai list ke-i ditambah num
         }
-        size -= num;
+        size -= num; // panjang list dikurangi num
     }
     /*
      * Output:
@@ -82,11 +82,11 @@ public class ArrayIntList {
      */
 
     // Exercise 5
-    public void removeAll (int value) {
-        for (int i = 0; i < size; i++) {
-            if (elementData[i] == value) {
-                remove(i);
-                i--;
+    public void removeAll (int value) { // removes all occurrences of the given value from the list
+        for (int i = 0; i < size; i++) { // iterasi sebanyak panjang list
+            if (elementData[i] == value) { // jika nilai list ke-i sama dengan value
+                remove(i); // menghapus nilai list ke-i
+                i--; // i dikurangi 1
             }
         }
     }
@@ -102,14 +102,14 @@ public class ArrayIntList {
      */
 
     // Exercise 6
-    public void stretch (int n) {
-        if (n <= 0) {
-            clear();
-        } else {
-            int oldSize = size;
-            for (int i = 0; i < oldSize; i++) {
-                for (int j = 1; j < n; j++) {
-                    add(n * i + j, elementData[n * i]);
+    public void stretch (int n) { // stretches the list by a factor of n
+        if (n <= 0) { // jika n kurang dari atau sama dengan 0
+            clear(); // menghapus semua nilai list
+        } else { // jika n lebih dari 0
+            int oldSize = size; // inisialisasi panjang list lama
+            for (int i = 0; i < oldSize; i++) { // iterasi sebanyak panjang list lama
+                for (int j = 1; j < n; j++) { // iterasi sebanyak n
+                    add(n * i + j, elementData[n * i]); // menambahkan nilai list ke-n dikali i ke list
                 }
             }
         }
@@ -124,23 +124,23 @@ public class ArrayIntList {
      */
 
     // Exercise 7
-    public int longestSortedSequence() {
-        if (size == 0) {
-            return 0;
+    public int longestSortedSequence() { // return panjang subsequence terpanjang yang terurut
+        if (size == 0) { // jika list kosong
+            return 0; // mengembalikan 0
         }
-        int longest = 1;
-        int current = 1;
-        for (int i = 1; i < size; i++) {
-            if (elementData[i] >= elementData[i - 1]) {
-                current++;
+        int longest = 1; // inisialisasi panjang subsequence terpanjang
+        int current = 1; // inisialisasi panjang subsequence saat ini
+        for (int i = 1; i < size; i++) { // iterasi sebanyak panjang list
+            if (elementData[i] >= elementData[i - 1]) { // jika nilai list ke-i lebih besar dari atau sama dengan nilai list ke-i dikurangi 1
+                current++; // panjang subsequence saat ini ditambah 1
             } else {
-                if (current > longest) {
-                    longest = current;
+                if (current > longest) { // jika panjang subsequence saat ini lebih besar dari panjang subsequence terpanjang
+                    longest = current; // panjang subsequence terpanjang menjadi panjang subsequence saat ini
                 }
-                current = 1;
+                current = 1; // panjang subsequence saat ini menjadi 1
             }
         }
-        return Math.max(longest, current);
+        return Math.max(longest, current); // mengembalikan nilai terbesar antara panjang subsequence terpanjang dan panjang subsequence saat ini
     }
     /*
      * Output:
