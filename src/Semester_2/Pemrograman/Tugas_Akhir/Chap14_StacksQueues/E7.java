@@ -1,5 +1,10 @@
 package Semester_2.Pemrograman.Tugas_Akhir.Chap14_StacksQueues;
 
+/*
+ * Travis Zusa Zuve Saputra
+ * 22537141013
+ */
+
 import java.util.*;
 
 public class E7 {
@@ -17,26 +22,40 @@ public class E7 {
         System.out.println(QUEUE);
     }
     public static void interLeave (Queue <Integer> QUEUE) {
-        Stack <Integer> STACK = new Stack <Integer> ();
-        int SIZE = QUEUE.size();
-        for (int i = 0; i < SIZE / 2; i++) {
-            STACK.push(QUEUE.remove());
+        Stack <Integer> STACK = new Stack <Integer> (); // inisialisasi stack
+        int SIZE = QUEUE.size(); // inisialisasi panjang queue
+        for (int i = 0; i < SIZE / 2; i++) { // iterasi sebanyak panjang queue dibagi 2
+            STACK.push(QUEUE.remove()); // mengambil nilai dari queue dan menambahkan ke stack
         }
-        while (!STACK.isEmpty()) {
-            QUEUE.add(STACK.pop());
+        while (!STACK.isEmpty()) { // iterasi selama stack tidak kosong
+            QUEUE.add(STACK.pop()); // mengambil nilai dari stack dan menambahkan ke queue
         }
-        for (int i = 0; i < SIZE / 2; i++) {
-            QUEUE.add(QUEUE.remove());
+        for (int i = 0; i < SIZE / 2; i++) { // iterasi sebanyak panjang queue dibagi 2
+            QUEUE.add(QUEUE.remove()); // mengambil nilai dari queue dan menambahkan ke queue
         }
-        for (int i = 0; i < SIZE / 2; i++) {
-            STACK.push(QUEUE.remove());
+        for (int i = 0; i < SIZE / 2; i++) { // iterasi sebanyak panjang queue dibagi 2
+            STACK.push(QUEUE.remove()); // mengambil nilai dari queue dan menambahkan ke stack
         }
-        while (!STACK.isEmpty()) {
-            QUEUE.add(STACK.pop());
-            QUEUE.add(QUEUE.remove());
+        while (!STACK.isEmpty()) { // iterasi selama stack tidak kosong
+            QUEUE.add(STACK.pop()); // mengambil nilai dari stack dan menambahkan ke queue
+            QUEUE.add(QUEUE.remove()); // mengambil nilai dari queue dan menambahkan ke queue
         }
-        if (QUEUE.size() % 2 == 1) {
-            throw new IllegalArgumentException();
+        if (QUEUE.size() % 2 == 1) { // jika panjang queue habis dibagi 2
+            throw new IllegalArgumentException(); // mengembalikan nilai error
         }
     }
 }
+
+/*
+Output:
+Jumlah angka yang akan dimasukkan: 8
+Masukkan angka ke-1: 2
+Masukkan angka ke-2: 8
+Masukkan angka ke-3: -5
+Masukkan angka ke-4: 19
+Masukkan angka ke-5: 7
+Masukkan angka ke-6: 3
+Masukkan angka ke-7: 24
+Masukkan angka ke-8: 42
+[2, 7, 8, 3, -5, 24, 19, 42]
+ */

@@ -23,29 +23,29 @@ public class E8 {
         System.out.println("Nilai terkecil: " + MIN_VALUE);
         System.out.println("Sesudah: " + STACK);
     }
-    public static int removeMin(Stack <Integer> STACK) {
-        Queue<Integer> QUEUE = new LinkedList<Integer>();
-        int MIN = STACK.peek();
+    public static int removeMin(Stack <Integer> STACK) { 
+        Queue<Integer> QUEUE = new LinkedList<Integer>(); // inisialisasi queue
+        int MIN = STACK.peek(); // inisialisasi nilai terkecil
         
-        while(!STACK.isEmpty()) {
-            int a = STACK.pop();
-            if(a < MIN)
-                MIN = a;
-            QUEUE.add(a);
+        while(!STACK.isEmpty()) { // iterasi selama stack tidak kosong
+            int a = STACK.pop(); // mengambil nilai dari stack
+            if(a < MIN) // jika nilai lebih kecil dari nilai terkecil
+                MIN = a; // nilai terkecil menjadi nilai tersebut
+            QUEUE.add(a); // menambahkan nilai ke queue
         }
-        while(!QUEUE.isEmpty()) {
-            int VALUE = QUEUE.remove();
-            if(VALUE > MIN) {
-                STACK.push(VALUE);
+        while(!QUEUE.isEmpty()) { // iterasi selama queue tidak kosong
+            int VALUE = QUEUE.remove(); // mengambil nilai dari queue
+            if(VALUE > MIN) { // jika nilai lebih besar dari nilai terkecil
+                STACK.push(VALUE); // menambahkan nilai ke stack
             }
         }
-        while(!STACK.isEmpty()) {
-            QUEUE.add(STACK.pop());
+        while(!STACK.isEmpty()) { // iterasi selama stack tidak kosong
+            QUEUE.add(STACK.pop()); // mengambil nilai dari stack dan menambahkan ke queue
         }
-        while(!QUEUE.isEmpty()) {
-            STACK.push(QUEUE.remove());
+        while(!QUEUE.isEmpty()) { // iterasi selama queue tidak kosong
+            STACK.push(QUEUE.remove()); // mengambil nilai dari queue dan menambahkan ke stack
         }
-        return MIN;
+        return MIN; // mengembalikan nilai terkecil
     }
 }
 

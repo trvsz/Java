@@ -9,14 +9,14 @@ import java.util.*;
 
 public class E4 {
     public static void main(String[] args) {
-        Queue<Integer> QUEUE = new LinkedList<Integer>();
-        for (int i = 1; i <= 6; i++) {
-            QUEUE.add(i);
+        Queue<Integer> QUEUE = new LinkedList<Integer>(); // inisialisasi queue
+        for (int i = 1; i <= 6; i++) { // iterasi sebanyak 6 kali
+            QUEUE.add(i); // menambahkan nilai ke queue
         }
-        for (int i = 0; i < QUEUE.size(); i++) {
-            System.out.print(QUEUE.remove() + " ");
+        for (int i = 0; i < QUEUE.size(); i++) { // iterasi sebanyak panjang queue
+            System.out.print(QUEUE.remove() + " "); // mengambil nilai dari queue
         }
-        System.out.println(QUEUE + " size " + QUEUE.size());
+        System.out.println(QUEUE + " size " + QUEUE.size()); // menampilkan nilai queue dan panjang queue
     }
 }
 

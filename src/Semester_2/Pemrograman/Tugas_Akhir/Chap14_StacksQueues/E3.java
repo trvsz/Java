@@ -32,27 +32,27 @@ public class E3 {
         System.out.println("Stack 1 dan Stack 2 sama? " + equals(STACK1, STACK2));
     }
     public static Boolean equals (Stack <Integer> STACK1, Stack <Integer> STACK2) {
-        Stack <Integer> STORAGE = new Stack <Integer> ();
+        Stack <Integer> STORAGE = new Stack <Integer> (); // inisialisasi stack
         
-        if (STACK1.size() != STACK2.size()) {
-            return false;
+        if (STACK1.size() != STACK2.size()) { // jika panjang stack1 tidak sama dengan panjang stack2
+            return false; // mengembalikan nilai false
         } else {
-            boolean EQUALS = true;
-            while (EQUALS && !STACK1.isEmpty()) {
-                int VALUE1 = STACK1.pop();
-                int VALUE2 = STACK2.pop();
-                if (VALUE1 != VALUE2) {
-                    EQUALS = false;
+            boolean EQUALS = true; // inisialisasi nilai boolean
+            while (EQUALS && !STACK1.isEmpty()) { // iterasi selama nilai boolean true dan stack1 tidak kosong
+                int VALUE1 = STACK1.pop(); // mengambil nilai dari stack1
+                int VALUE2 = STACK2.pop(); // mengambil nilai dari stack2
+                if (VALUE1 != VALUE2) { // jika nilai stack1 tidak sama dengan nilai stack2
+                    EQUALS = false; // nilai boolean menjadi false
                 }
-                STORAGE.add(VALUE1);
-                STORAGE.add(VALUE2);
+                STORAGE.add(VALUE1); // menambahkan nilai ke stack
+                STORAGE.add(VALUE2); // menambahkan nilai ke stack
                 
             }
-            while (!STORAGE.isEmpty()) {
-                STACK2.push(STORAGE.pop());
-                STACK1.push(STORAGE.pop());
+            while (!STORAGE.isEmpty()) { // iterasi selama stack tidak kosong
+                STACK2.push(STORAGE.pop()); // mengambil nilai dari stack dan menambahkan ke stack2
+                STACK1.push(STORAGE.pop()); // mengambil nilai dari stack dan menambahkan ke stack1
             }
-            return EQUALS;
+            return EQUALS; // mengembalikan nilai boolean
         }
     }
 }

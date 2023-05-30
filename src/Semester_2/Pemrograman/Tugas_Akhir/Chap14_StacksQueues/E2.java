@@ -20,16 +20,16 @@ public class E2 {
         System.out.println("After stutter: " + STACK);
     }
     public static void stutter(Stack <Integer> STACK) {
-        Queue <Integer> QUEUE = new LinkedList <Integer> ();
-        while (!STACK.isEmpty()) {
-            int VALUE = STACK.pop();
-            QUEUE.add(VALUE);
-            QUEUE.add(VALUE);
+        Queue <Integer> QUEUE = new LinkedList <Integer> (); // inisialisasi queue
+        while (!STACK.isEmpty()) { // iterasi selama stack tidak kosong
+            int VALUE = STACK.pop(); // mengambil nilai dari stack
+            QUEUE.add(VALUE); // menambahkan nilai ke queue
+            QUEUE.add(VALUE); // menambahkan nilai ke queue
         }
-        while (!QUEUE.isEmpty()) {
-            STACK.push(QUEUE.remove());
+        while (!QUEUE.isEmpty()) { // iterasi selama queue tidak kosong
+            STACK.push(QUEUE.remove()); // mengambil nilai dari queue dan menambahkan ke stack
         }
-        Collections.reverse(STACK);
+        Collections.reverse(STACK); // membalikkan nilai stack
     }
 }
 

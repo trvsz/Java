@@ -21,23 +21,23 @@ public class E5 {
         System.out.println("Palindrome? " + isPalindrome(QUEUE));
     }
     public static Boolean isPalindrome (Queue <Integer> QUEUE) {
-        Stack <Integer> STACK = new Stack <> ();
-        int SIZE = QUEUE.size();
-        for (int i = 0; i < SIZE; i++) {
-            int VALUE = QUEUE.remove();
-            QUEUE.add(VALUE);
-            STACK.push(VALUE);
+        Stack <Integer> STACK = new Stack <> (); // inisialisasi stack
+        int SIZE = QUEUE.size(); // inisialisasi panjang queue
+        for (int i = 0; i < SIZE; i++) { // iterasi sebanyak panjang queue
+            int VALUE = QUEUE.remove(); // mengambil nilai dari queue
+            QUEUE.add(VALUE); // menambahkan nilai ke queue
+            STACK.push(VALUE); // menambahkan nilai ke stack
         }
-        boolean PALINDROME = true;
-        for (int i = 0; i < SIZE; i++) {
-            int VALUE1 = QUEUE.remove();
-            int VALUE2 = STACK.pop();
-            if (VALUE1 != VALUE2) {
-                PALINDROME = false;
+        boolean PALINDROME = true; // inisialisasi nilai boolean
+        for (int i = 0; i < SIZE; i++) { // iterasi sebanyak panjang queue
+            int VALUE1 = QUEUE.remove(); // mengambil nilai dari queue
+            int VALUE2 = STACK.pop(); // mengambil nilai dari stack
+            if (VALUE1 != VALUE2) { // jika nilai queue tidak sama dengan nilai stack
+                PALINDROME = false; // nilai boolean menjadi false
             }
-            QUEUE.add(VALUE1);
+            QUEUE.add(VALUE1); // menambahkan nilai ke queue
         }
-        return PALINDROME;
+        return PALINDROME; // mengembalikan nilai boolean
     }
 }
 

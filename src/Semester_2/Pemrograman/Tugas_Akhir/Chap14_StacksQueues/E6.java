@@ -22,24 +22,24 @@ public class E6 {
         reorder(QUEUE);
         System.out.println("Sesudah: " + QUEUE);
     }
-    public static void reorder (Queue <Integer> QUEUE) {
-        Stack <Integer> STACK = new Stack<>();
-        int SIZE = QUEUE.size();
-        int POSITION_NUMBER = 0;
-        for (int i = 0; i < SIZE; i++) {
-            int VALUE = QUEUE.remove();
-            if (VALUE < 0) {
-                STACK.push(VALUE);
-            } else {
-                QUEUE.add(VALUE);
-                POSITION_NUMBER++;
+    public static void reorder (Queue <Integer> QUEUE) { 
+        Stack <Integer> STACK = new Stack<>(); // inisialisasi stack
+        int SIZE = QUEUE.size(); // inisialisasi panjang queue
+        int POSITION_NUMBER = 0; // inisialisasi posisi angka
+        for (int i = 0; i < SIZE; i++) { // iterasi sebanyak panjang queue
+            int VALUE = QUEUE.remove(); // mengambil nilai dari queue
+            if (VALUE < 0) { // jika nilai kurang dari 0
+                STACK.push(VALUE); // menambahkan nilai ke stack
+            } else { // jika nilai lebih dari 0
+                QUEUE.add(VALUE); // menambahkan nilai ke queue
+                POSITION_NUMBER++; // menambahkan posisi angka
             }
         }
-        while (!STACK.isEmpty()) {
-            QUEUE.add(STACK.pop());
+        while (!STACK.isEmpty()) { // iterasi selama stack tidak kosong
+            QUEUE.add(STACK.pop()); // mengambil nilai dari stack dan menambahkan ke queue
         }
-        for (int i = 0; i < POSITION_NUMBER; i++) {
-            QUEUE.add(QUEUE.remove());
+        for (int i = 0; i < POSITION_NUMBER; i++) { // iterasi sebanyak posisi angka
+            QUEUE.add(QUEUE.remove()); // mengambil nilai dari queue dan menambahkan ke queue
         }
     }
 }
