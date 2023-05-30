@@ -25,11 +25,11 @@ public class E6 {
         System.out.println("Hasil: " + RESULT);
     }
     public static Set <String> mystery(Map <String, String> DATA) {
-        Set <String> RESULT = new TreeSet<String>();
-        for (String S : DATA.keySet()) {
-            RESULT.add(DATA.get(S));
+        Set <String> RESULT = new TreeSet<String>(); // Membuat set baru
+        for (String S : DATA.keySet()) { // Pengulangan untuk mengambil key dari map
+            RESULT.add(DATA.get(S)); // Menambahkan nilai key ke dalam set 
         }
-        return RESULT;
+        return RESULT; // Mengembalikan nilai RESULT
     }
 }
 

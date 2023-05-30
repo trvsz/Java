@@ -20,13 +20,13 @@ public class E4 {
         hasOdd(SET);
     }
     public static void hasOdd(Set<Integer> SET) {
-        for (Integer i : SET) {
-            if (i % 2 == 1) {
-                System.out.println("Ada");
-                return;
+        for (Integer i : SET) { // Pengulangan untuk mengambil nilai dari set
+            if (i % 2 == 1) { // Jika nilai i ganjil
+                System.out.println("Ada"); // Menampilkan "Ada"
+                return; // Menghentikan program
             }
         }
-        System.out.println("Tidak ada");
+        System.out.println("Tidak ada"); // Menampilkan "Tidak ada"
     }
 }
 

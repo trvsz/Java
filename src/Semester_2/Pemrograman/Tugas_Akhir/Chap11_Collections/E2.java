@@ -27,11 +27,11 @@ public class E2 {
         System.out.println(list);
     }
     public static void removeInRange(List<Integer> array, int element, int start, int end) {
-        for (int i = start; i < end; i++) {
-            if (array.get(i) == element) {
-                array.remove(i);
-                i--;
-                end--;
+        for (int i = start; i < end; i++) { // Pengulangan untuk menggeser nilai dalam list
+            if (array.get(i) == element) { // Jika nilai list sama dengan element
+                array.remove(i); // Menghapus nilai list
+                i--; // Menggeser nilai i
+                end--; // Menggeser nilai end
             }
         }
     }

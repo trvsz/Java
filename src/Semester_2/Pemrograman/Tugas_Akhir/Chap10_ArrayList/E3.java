@@ -21,10 +21,10 @@ public class E3 {
     }
     public static void mystery2 (ArrayList<Integer> list) {
         for (int i = list.size() - 1; i >= 0; i--) { // Pengulangan untuk menggeser nilai dalam list
-            if (i % 2 == 0) {
-                list.add(list.get(i));
-            } else {
-                list.add(0, list.get(i));
+            if (i % 2 == 0) { // Jika i adalah bilangan genap
+                list.add(list.get(i)); // Menambahkan nilai list ke dalam list
+            } else { // Jika i adalah bilangan ganjil
+                list.add(0, list.get(i)); // Menambahkan nilai list ke dalam list
             }
         }
         System.out.println(list);

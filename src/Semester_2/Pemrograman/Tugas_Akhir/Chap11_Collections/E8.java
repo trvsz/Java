@@ -30,13 +30,13 @@ public class E8 {
         System.out.println("Count Map: " + countMap);
     }
     public static Map <Integer, Integer> counts (List <Integer> list, Set <Integer> set) {
-        Map <Integer, Integer> countMap = new HashMap <>();
-        for (int num : list) {
-            if (set.contains((num))) {
-                countMap.put(num, countMap.getOrDefault(num, 0) + 1);
+        Map <Integer, Integer> countMap = new HashMap <>(); // Membuat map baru
+        for (int num : list) { // Pengulangan untuk mengambil nilai dari list
+            if (set.contains((num))) { // Jika nilai num ada di dalam set
+                countMap.put(num, countMap.getOrDefault(num, 0) + 1); // Menambahkan nilai num ke dalam map
             }
         }
-        return countMap;
+        return countMap; // Mengembalikan nilai countMap
     }
 }
 

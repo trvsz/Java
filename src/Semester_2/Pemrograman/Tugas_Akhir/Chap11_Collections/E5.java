@@ -22,14 +22,14 @@ public class E5 {
         System.out.println("Data SET_EVEN: " + SET_EVEN);
     }
     public static Set <Integer> removeEvens(Set <Integer> SET_ODD) {
-        Set <Integer> SET_EVEN = new TreeSet<Integer>();
-        for (Integer num : SET_ODD) {
-            if (num % 2 == 0) {
-                SET_EVEN.add(num);
+        Set <Integer> SET_EVEN = new TreeSet<Integer>(); // Membuat set baru
+        for (Integer num : SET_ODD) { // Pengulangan untuk mengambil nilai dari set
+            if (num % 2 == 0) { // Jika nilai num genap
+                SET_EVEN.add(num); // Menambahkan nilai num ke dalam set
             }
         }
-        SET_ODD.removeAll(SET_EVEN);
-        return SET_EVEN;
+        SET_ODD.removeAll(SET_EVEN); // Menghapus nilai SET_EVEN dari SET_ODD
+        return SET_EVEN; // Mengembalikan nilai SET_EVEN
     }
 }
 

@@ -22,9 +22,9 @@ public class E5 {
         acronymFor(words);
     }
     public static void acronymFor(ArrayList<String> words) {
-        for (String word : words) {
-            word = word.toUpperCase();
-            System.out.print(word.charAt(0));
+        for (String word : words) { // Pengulangan untuk mengambil nilai dari list
+            word = word.toUpperCase(); // Mengubah nilai menjadi huruf kapital
+            System.out.print(word.charAt(0)); // Mengambil karakter pertama dari nilai
         }
     }
 }

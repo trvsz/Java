@@ -23,13 +23,13 @@ public class E8 {
         System.out.println(list);
     }
     public static void reverse3(ArrayList<Integer> list) {
-        int size = list.size();
-        int end = size - (size % 3);
+        int size = list.size(); // Mengambil panjang list
+        int end = size - (size % 3); // Mengambil nilai kelipatan 3 terdekat dari panjang list
 
-        for (int i = 0; i < end; i += 3) {
-            int temp = list.get(i);
-            list.set(i, list.get(i + 2));
-            list.set(i + 2, temp);
+        for (int i = 0; i < end; i += 3) { // Pengulangan untuk mengambil nilai dari list
+            int temp = list.get(i); // Menyimpan nilai list ke dalam variabel temp
+            list.set(i, list.get(i + 2)); // Mengubah nilai list
+            list.set(i + 2, temp); // Mengubah nilai list
         }
     }
 }

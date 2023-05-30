@@ -22,8 +22,8 @@ public class E6 {
         System.out.println(list);
     }
     public static void addStars(ArrayList<String> list) {
-        for (int i = 1; i <= list.size(); i += 2) {
-            list.add(i, "*");
+        for (int i = 1; i <= list.size(); i += 2) { // Pengulangan untuk mengambil nilai dari list
+            list.add(i, "*"); // Menambahkan nilai * ke dalam list
         }
     }
 }

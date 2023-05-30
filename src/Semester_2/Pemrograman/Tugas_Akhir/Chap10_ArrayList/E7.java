@@ -22,13 +22,13 @@ public class E7 {
         System.out.println(list);
     }
     public static void switchPairs(ArrayList<String> list) {
-        int size = list.size();
-        int end = size - (size % 2);
+        int size = list.size(); // Mengambil panjang list
+        int end = size - (size % 2); // Mengambil nilai genap terdekat dari panjang list
 
-        for (int i = 0; i < end; i += 2) {
-            String temp = list.get(i);
-            list.set(i, list.get(i + 1));
-            list.set(i + 1, temp);
+        for (int i = 0; i < end; i += 2) { // Pengulangan untuk mengambil nilai dari list
+            String temp = list.get(i); // Menyimpan nilai list ke dalam variabel temp
+            list.set(i, list.get(i + 1)); // Mengubah nilai list
+            list.set(i + 1, temp); // Mengubah nilai list
         }
     }
 }

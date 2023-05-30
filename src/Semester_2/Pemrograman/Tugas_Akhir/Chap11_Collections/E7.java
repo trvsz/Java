@@ -23,15 +23,15 @@ public class E7 {
         mapMystery2(map);
     }
     public static void mapMystery2(Map <String, String> map) {
-        Set <String> SET = new TreeSet<String>();
-        for (String key : map.keySet()) {
-            if (!map.get(key).equals(key)) {
-                SET.add(map.get(key));
-            } else {
-                SET.remove(map.get(key));
+        Set <String> SET = new TreeSet<String>(); // Membuat set baru
+        for (String key : map.keySet()) { // Pengulangan untuk mengambil key dari map
+            if (!map.get(key).equals(key)) { // Jika nilai key tidak sama dengan nilai value
+                SET.add(map.get(key)); // Menambahkan nilai value ke dalam set
+            } else { // Jika nilai key sama dengan nilai value
+                SET.remove(map.get(key)); // Menghapus nilai value dari set
             }
         }
-        System.out.println(SET);
+        System.out.println(SET); // Menampilkan nilai set
     }
 }
 

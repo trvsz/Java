@@ -17,15 +17,15 @@ public class E9 {
         System.out.println("Hasilnya adalah: " + HASIL);
     }
     public static Map <Integer, Set<String>> split (Set <String> INPUT) {
-        Map <Integer, Set<String>> RESULT_MAP = new TreeMap<>();
-        for (String str : INPUT) {
-            int LENGTH = str.length();
-            if (!RESULT_MAP.containsKey(LENGTH)) {
-                RESULT_MAP.put(LENGTH, new HashSet<>());
+        Map <Integer, Set<String>> RESULT_MAP = new TreeMap<>(); // Membuat map baru
+        for (String str : INPUT) { // Pengulangan untuk mengambil nilai dari set
+            int LENGTH = str.length(); // Mengambil panjang nilai str
+            if (!RESULT_MAP.containsKey(LENGTH)) { // Jika map tidak mengandung key LENGTH
+                RESULT_MAP.put(LENGTH, new HashSet<>()); // Menambahkan key LENGTH ke dalam map
             }
-            RESULT_MAP.get(LENGTH).add(str);
+            RESULT_MAP.get(LENGTH).add(str); // Menambahkan nilai str ke dalam map
         }
-        return RESULT_MAP;
+        return RESULT_MAP; // Mengembalikan nilai RESULT_MAP
     }
 }
 

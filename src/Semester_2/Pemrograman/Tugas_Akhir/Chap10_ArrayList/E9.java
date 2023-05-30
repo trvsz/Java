@@ -28,21 +28,21 @@ public class E9 {
         intersect(list1, list2);
     }
     public static void intersect(ArrayList<Integer> list1, ArrayList<Integer> list2) {
-        ArrayList <Integer> result = new ArrayList<>();
-        int i = 0;
+        ArrayList <Integer> result = new ArrayList<>(); // Membuat list baru untuk menyimpan nilai yang sama
+        int i = 0; 
         int j = 0;
-        while (i < list1.size() && j < list2.size()) {
-            if (list1.get(i).equals(list2.get(j))) {
-                result.add(list1.get(i));
-                i++;
-                j++;
-            } else if (list1.get(i) < list2.get(j)) {
-                i++;
-            } else {
-                j++;
+        while (i < list1.size() && j < list2.size()) { // Pengulangan untuk mengambil nilai dari list
+            if (list1.get(i).equals(list2.get(j))) { // Membandingkan nilai dari kedua list
+                result.add(list1.get(i)); // Menambahkan nilai yang sama ke dalam list baru
+                i++; // Menambahkan nilai i
+                j++; // Menambahkan nilai j
+            } else if (list1.get(i) < list2.get(j)) { // Membandingkan nilai dari kedua list
+                i++; // Menambahkan nilai i
+            } else { // Membandingkan nilai dari kedua list
+                j++; // Menambahkan nilai j
             }
         }
-        System.out.println(">> Intersect: " + result);
+        System.out.println(">> Intersect: " + result); // Menampilkan nilai list baru
     }
 }
 
